@@ -80,6 +80,7 @@ body {
 @theme inline {
   --color-background: #f6f7f8;
   --color-active-1: var(--activestate_bg_1);
+  --color-active-2: var(--activestate_bg_2);
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
