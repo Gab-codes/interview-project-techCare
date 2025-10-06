@@ -10,7 +10,11 @@ const Patients = () => {
         <img src={Search} alt="search" />
       </div>
 
-      <div className="flex flex-col gap-2 mt-8">
+      {/* <-- scroll container: overflow-y enabled and custom-scrollbar class applied */}
+      <div
+        className="flex flex-col gap-2 mt-8 mb-3 overflow-y-auto overflow-x-hidden h-110 custom-scrollbar px-0"
+        style={{ maxHeight: "calc(100% - 64px)" }} // adjust 64px if your header/footer heights differ
+      >
         {patients.map((patient) => {
           const isActive = patient.isActive === true;
 
