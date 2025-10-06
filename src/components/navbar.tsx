@@ -35,11 +35,11 @@ const Navbar = () => {
 
       {/* Desktop Nav */}
       <div className="hidden lg:flex lg:gap-5 xl:gap-8">
-        {navlist.map((item, index) => {
+        {navlist.map((item) => {
           const isActive = item.title === "patients";
           return (
             <div
-              key={index}
+              key={item.title}
               className={cn(
                 "flex items-center lg:gap-1.5 xl:gap-2 body-emphasized-14pt capitalize cursor-pointer transition-all duration-300",
                 "rounded-[41px] py-2",
