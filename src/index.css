@@ -34,6 +34,7 @@ body {
   --unnamed-font-weight-800: 800;
   --unnamed-font-weight-normal: normal;
   --unnamed-font-weight-bold: bold;
+  --unnamed-font-size-12: 12px;
   --unnamed-font-size-14: 14px;
   --unnamed-font-size-18: 18px;
   --unnamed-font-size-24: 24px;
@@ -44,7 +45,6 @@ body {
   --unnamed-text-transform-titlecase: titlecase;
 
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -162,6 +162,15 @@ body {
   font-style: var(--unnamed-font-style-normal);
   font-weight: var(--unnamed-font-weight-normal);
   font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-19);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+}
+.body-regular-12 {
+  font-family: var(--unnamed-font-family-manrope);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-12);
   line-height: var(--unnamed-line-spacing-19);
   letter-spacing: var(--unnamed-character-spacing-0);
   color: var(--unnamed-color-072635);

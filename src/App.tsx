@@ -1,5 +1,6 @@
 import "./App.css";
 import DiagnoseHistory from "./components/diagnose-history";
+import DiagnosticList from "./components/diagnostic-list";
 import Navbar from "./components/navbar";
 import Patients from "./components/patients";
 
@@ -9,7 +10,10 @@ function App() {
       <Navbar />
       <div className="flex gap-4">
         <Patients />
-        <DiagnoseHistory />
+        <div className="flex gap-4 flex-col">
+          <DiagnoseHistory />
+          <DiagnosticList />
+        </div>
       </div>
     </div>
   );
