@@ -20,8 +20,10 @@ import FemaleIcon from "./FemaleIcon.svg";
 import InsuranceIcon from "./InsuranceIcon.svg";
 import JessicaTaylor from "./jessica_taylor.png";
 import BirthIcon from "./BirthIcon.svg";
+import Download from "./downloadIcon.svg";
 
 export {
+  Download,
   BirthIcon,
   JessicaTaylor,
   InsuranceIcon,

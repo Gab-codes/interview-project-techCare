@@ -1,8 +1,12 @@
-import { diagnostics } from "@/constants";
+import type { DiagnosticItem } from "@/types";
 
-const DiagnosticList = () => {
+const DiagnosticList = ({
+  diagnosticDataList,
+}: {
+  diagnosticDataList: DiagnosticItem[];
+}) => {
   return (
-    <div className="bg-white flex flex-col gap-4 rounded-2xl p-4">
+    <div className="bg-white flex flex-col gap-4 rounded-2xl p-4 h-full">
       <h2 className="card-title-24pt mb-3 2xl:mb-4">Diagnostic List</h2>
 
       <div className="overflow-hidden">
@@ -25,13 +29,13 @@ const DiagnosticList = () => {
         <div className="overflow-y-auto max-h-39 mt-2 custom-scrollbar">
           <table className="w-full border-collapse">
             <tbody>
-              {diagnostics.map((item, index) => (
+              {diagnosticDataList.map((item, index) => (
                 <tr
                   key={index}
                   className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
                 >
                   <td className="py-3 px-4 body-regular-12 2xl:body-regular-14">
-                    {item.problem}
+                    {item.name}
                   </td>
                   <td className="py-3 px-4 body-regular-12 2xl:body-regular-14">
                     {item.description}
