@@ -87,3 +87,31 @@ export const diagnoseReports = [
     output: "Lower than Average",
   },
 ];
+
+export const diagnostics = [
+  {
+    problem: "Hypertension",
+    description: "Chronic high blood pressure",
+    status: "Under Observation",
+  },
+  {
+    problem: "Type 2 Diabetes",
+    description: "Insulin resistance and elevated blood sugar",
+    status: "Cured",
+  },
+  {
+    problem: "Asthma",
+    description: "Recurrent episodes of bronchial constriction",
+    status: "Inactive",
+  },
+  {
+    problem: "Osteoarthritis",
+    description: "Degenerative joint disease",
+    status: "Untreated",
+  },
+  {
+    problem: "Coronary Artery Disease",
+    description: "Narrowing of coronary arteries",
+    status: "Under Observation",
+  },
+];
