@@ -4,17 +4,13 @@ import { patients } from "@/constants";
 
 const Patients = () => {
   return (
-    <div className="bg-white rounded-2xl py-3 lg:w-65 xl:w-85 2xl:w-91.75 h-full">
+    <div className="bg-white rounded-2xl py-3 lg:w-65 xl:w-75 2xl:w-91.75 h-full">
       <div className="flex justify-between py-2 px-5">
         <div className="text-xl font-bold">Patients</div>
         <img src={Search} alt="search" />
       </div>
 
-      {/* <-- scroll container: overflow-y enabled and custom-scrollbar class applied */}
-      <div
-        className="flex flex-col gap-2 mt-8 mb-3 overflow-y-auto overflow-x-hidden h-110 custom-scrollbar px-0"
-        style={{ maxHeight: "calc(100% - 64px)" }} // adjust 64px if your header/footer heights differ
-      >
+      <div className="flex flex-col gap-2 mt-8 mb-3 overflow-y-auto overflow-x-hidden h-110 custom-scrollbar px-0">
         {patients.map((patient) => {
           const isActive = patient.isActive === true;
 
