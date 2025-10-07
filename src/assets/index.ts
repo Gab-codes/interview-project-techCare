@@ -15,8 +15,18 @@ import Temperature from "./temperature.svg";
 import ArrowDown from "./ArrowDown.svg";
 import ArrowUp from "./ArrowUp.svg";
 import ExpandArrowDown from "./expand_more_FILL0_wght300_GRAD0_opsz24.svg";
+import Phone from "./PhoneIcon.svg";
+import FemaleIcon from "./FemaleIcon.svg";
+import InsuranceIcon from "./InsuranceIcon.svg";
+import JessicaTaylor from "./jessica_taylor.png";
+import BirthIcon from "./BirthIcon.svg";
 
 export {
+  BirthIcon,
+  JessicaTaylor,
+  InsuranceIcon,
+  FemaleIcon,
+  Phone,
   ExpandArrowDown,
   ArrowUp,
   ArrowDown,
