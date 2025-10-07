@@ -12,11 +12,10 @@ import {
   Chart,
 } from "chart.js";
 import { ArrowDown, ArrowUp, ExpandArrowDown } from "@/assets";
+import type { DiagnoseHistoryItem } from "@/types";
 
 export interface BloodPressureChartProps {
-  labels?: string[];
-  systolic?: number[];
-  diastolic?: number[];
+  data: DiagnoseHistoryItem[];
 }
 
 ChartJS.register(
@@ -29,20 +28,16 @@ ChartJS.register(
   Legend
 );
 
-export default function BloodPressureChart({
-  labels = [
-    "Oct, 2023",
-    "Nov, 2023",
-    "Dec, 2023",
-    "Jan, 2024",
-    "Feb, 2024",
-    "Mar, 2024",
-  ],
-  systolic = [120, 118, 160, 112, 148, 158],
-  diastolic = [110, 65, 105, 92, 70, 78],
-}: BloodPressureChartProps) {
+export default function BloodPressureChart({ data }: BloodPressureChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<ChartJS | null>(null);
+
+  const labels = data.map(
+    (entry) => `${entry.month.slice(0, 3)}, ${entry.year}`
+  );
+
+  const systolic = data.map((entry) => entry.blood_pressure.systolic.value);
+  const diastolic = data.map((entry) => entry.blood_pressure.diastolic.value);
 
   const tickFontSize = window.innerWidth >= 1536 ? 12 : 10;
 
@@ -101,9 +96,7 @@ export default function BloodPressureChart({
           intersect: false,
         },
         plugins: {
-          legend: {
-            display: false,
-          },
+          legend: { display: false },
           tooltip: {
             padding: 10,
             titleFont: { size: 12 },
@@ -117,13 +110,8 @@ export default function BloodPressureChart({
         },
         scales: {
           x: {
-            grid: {
-              display: false,
-            },
-            ticks: {
-              color: "#475569",
-              font: { size: tickFontSize },
-            },
+            grid: { display: false },
+            ticks: { color: "#475569", font: { size: tickFontSize } },
           },
           y: {
             min: 60,
@@ -133,18 +121,11 @@ export default function BloodPressureChart({
               color: "#94a3b8",
               font: { size: 12 },
             },
-            grid: {
-              color: "rgba(15, 23, 42, 0.06)",
-            },
+            grid: { color: "rgba(15, 23, 42, 0.06)" },
           },
         },
         layout: {
-          padding: {
-            left: 8,
-            right: 8,
-            top: 8,
-            bottom: 8,
-          },
+          padding: { left: 8, right: 8, top: 8, bottom: 8 },
         },
       },
     };
@@ -159,9 +140,8 @@ export default function BloodPressureChart({
     };
   }, [labels, systolic, diastolic, tickFontSize]);
 
-  const latestSystolic = systolic[systolic.length - 1] ?? 0;
-
-  const latestDiastolic = diastolic[diastolic.length - 1] ?? 0;
+  const latestSystolic = systolic.at(-1) ?? 0;
+  const latestDiastolic = diastolic.at(-1) ?? 0;
 
   return (
     <div className="bg-[#F4F0FE] 2xl:w-[45.375rem] rounded-2xl p-1 grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
@@ -193,6 +173,7 @@ export default function BloodPressureChart({
             <span>Higher than Average</span>
           </div>
         </div>
+
         <div className="border border-[#CBC8D4] my-1" />
 
         <div className="flex flex-col gap-1">

@@ -1,7 +1,37 @@
-import { ArrowDown } from "@/assets";
-import { diagnoseReports } from "@/constants";
+import {
+  HeartBPM,
+  RespitoryRate,
+  ArrowDown,
+  Temperature,
+  ArrowUp,
+} from "@/assets";
+import type { DiagnoseHistoryItem } from "@/types";
 
-const DiagnoseReport = () => {
+const DiagnoseReport = ({ data }: { data: DiagnoseHistoryItem }) => {
+  const diagnoseReports = [
+    {
+      title: "Respiratory Rate",
+      value: data.respiratory_rate.value + " bpm",
+      color: "#E0F3FA",
+      image: RespitoryRate,
+      level: data.respiratory_rate.levels,
+    },
+    {
+      title: "Temperature",
+      value: data.temperature.value + "°F",
+      color: "#FFE6E9",
+      image: Temperature,
+      level: data.temperature.levels,
+    },
+    {
+      title: "Heart Rate",
+      value: data.heart_rate.value + " bpm",
+      color: "#FFE6F1",
+      image: HeartBPM,
+      level: data.heart_rate.levels,
+    },
+  ];
+
   return (
     <div className="grid grid-cols-3 gap-4">
       {diagnoseReports.map((item) => (
@@ -23,10 +53,18 @@ const DiagnoseReport = () => {
           </div>
 
           <div className="pt-3 flex items-center gap-1">
-            {item.output !== "Normal" && (
-              <img src={ArrowDown} alt="arrow-down" className="size-3" />
-            )}
-            <span className="text-xs 2xl:text-sm">{item.output}</span>
+            {(() => {
+              const trendIcon = item.level.includes("Higher")
+                ? ArrowUp
+                : item.level !== "Normal"
+                ? ArrowDown
+                : null;
+
+              return trendIcon ? (
+                <img src={trendIcon} alt="trend-icon" className="size-3" />
+              ) : null;
+            })()}
+            <span className="text-xs 2xl:text-sm">{item.level}</span>
           </div>
         </div>
       ))}
