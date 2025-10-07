@@ -1,4 +1,4 @@
-import { DoctorAvatar } from "@/assets";
+import { DoctorAvatar, HeartBPM, RespitoryRate, Temperature } from "@/assets";
 
 export const patients = [
   {
@@ -61,5 +61,29 @@ export const patients = [
     avatar: DoctorAvatar,
     gender: "Male",
     age: 36,
+  },
+];
+
+export const diagnoseReports = [
+  {
+    title: "Respiratory Rate",
+    value: "20 bpm",
+    color: "#E0F3FA",
+    image: RespitoryRate,
+    output: "Normal",
+  },
+  {
+    title: "Temperature",
+    value: "98.6°F",
+    color: "#FFE6E9",
+    image: Temperature,
+    output: "Normal",
+  },
+  {
+    title: "Heart Rate",
+    value: "78 bpm",
+    color: "#FFE6F1",
+    image: HeartBPM,
+    output: "Lower than Average",
   },
 ];

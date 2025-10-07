@@ -9,8 +9,16 @@ import Setting from "./settings_FILL0_wght300_GRAD0_opsz24.svg";
 import VeritcalMore from "./more_vert_FILL0_wght300_GRAD0_opsz24.svg";
 import HorizontalMore from "./more_horiz_FILL0_wght300_GRAD0_opsz24.svg";
 import Search from "./search_FILL0_wght300_GRAD0_opsz24.svg";
+import HeartBPM from "./HeartBPM.svg";
+import RespitoryRate from "./respiratory-rate.svg";
+import Temperature from "./temperature.svg";
+import ArrowDown from "./ArrowDown.svg";
 
 export {
+  ArrowDown,
+  HeartBPM,
+  RespitoryRate,
+  Temperature,
   HorizontalMore,
   Search,
   Setting,
