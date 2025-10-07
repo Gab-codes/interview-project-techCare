@@ -13,8 +13,12 @@ import HeartBPM from "./HeartBPM.svg";
 import RespitoryRate from "./respiratory-rate.svg";
 import Temperature from "./temperature.svg";
 import ArrowDown from "./ArrowDown.svg";
+import ArrowUp from "./ArrowUp.svg";
+import ExpandArrowDown from "./expand_more_FILL0_wght300_GRAD0_opsz24.svg";
 
 export {
+  ExpandArrowDown,
+  ArrowUp,
   ArrowDown,
   HeartBPM,
   RespitoryRate,
