@@ -7,7 +7,7 @@ const DiagnoseReport = () => {
       {diagnoseReports.map((item) => (
         <div
           key={item.title}
-          className="flex flex-col justify-start py-4 px-5 xl:w-50 2xl:w-57 rounded-lg text-dark-sm"
+          className="flex flex-col justify-start py-4 px-5 xl:max-w-50 2xl:w-57 rounded-lg text-dark-sm"
           style={{ backgroundColor: item.color }}
         >
           <div className="bg-white rounded-full p-1 w-fit">

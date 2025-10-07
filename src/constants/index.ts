@@ -62,6 +62,42 @@ export const patients = [
     gender: "Male",
     age: 36,
   },
+  {
+    name: "Samantha Johnson",
+    avatar: DoctorAvatar,
+    gender: "Female",
+    age: 56,
+  },
+  {
+    name: "Ashley Martinez",
+    avatar: DoctorAvatar,
+    gender: "Female",
+    age: 54,
+  },
+  {
+    name: "Olivia Brown",
+    avatar: DoctorAvatar,
+    gender: "Female",
+    age: 32,
+  },
+  {
+    name: "Tyler Davis",
+    avatar: DoctorAvatar,
+    gender: "Male",
+    age: 19,
+  },
+  {
+    name: "Kevin Anderson",
+    avatar: DoctorAvatar,
+    gender: "Male",
+    age: 30,
+  },
+  {
+    name: "Dylan Thompson",
+    avatar: DoctorAvatar,
+    gender: "Male",
+    age: 36,
+  },
 ];
 
 export const diagnoseReports = [
