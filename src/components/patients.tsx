@@ -1,18 +1,20 @@
 import { cn } from "@/lib/utils";
 import { HorizontalMore, Search } from "@/assets";
-import { patients } from "@/constants";
+import { usePatient } from "@/hook/usePatient";
 
 const Patients = () => {
+  const { patients } = usePatient();
+
   return (
-    <div className="bg-white rounded-2xl py-3 lg:w-65 xl:w-75 2xl:w-91.75 h-full">
+    <div className="bg-white rounded-2xl py-3 lg:w-55 xl:w-75 2xl:w-91.75 h-full">
       <div className="flex justify-between py-2 px-5">
         <div className="text-xl font-bold">Patients</div>
         <img src={Search} alt="search" />
       </div>
 
-      <div className="flex flex-col gap-2 mt-8 mb-3 overflow-y-auto overflow-x-hidden h-110 custom-scrollbar px-0">
-        {patients.map((patient) => {
-          const isActive = patient.isActive === true;
+      <div className="flex flex-col gap-2 mt-8 mb-3 overflow-y-auto overflow-x-hidden lg:max-h-200 2xl:max-h-220 custom-scrollbar px-0">
+        {patients?.map((patient) => {
+          const isActive = patient.name === "Jessica Taylor";
 
           return (
             <div
@@ -29,7 +31,7 @@ const Patients = () => {
             >
               <div className="flex gap-2.5 items-center">
                 <img
-                  src={patient.avatar}
+                  src={patient.profile_picture}
                   alt={patient.name}
                   className="size-9 lg:size-10 2xl:size-12"
                 />

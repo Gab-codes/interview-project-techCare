@@ -25,15 +25,14 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="flex justify-between items-center bg-white px-4 py-3.5 lg:px-4 xl:px-6 rounded-full relative">
-      {/* Logo */}
+    <div className="flex justify-between items-center bg-white px-4 py-3.5 2xl:py-4.5 mt-1 lg:px-4 xl:px-6 rounded-full relative">
       <img
         src={Logo}
         alt="logo"
-        className="h-6 sm:h-7 md:h-8 lg:h-8 xl:h-10 2xl:h-12"
+        className="h-6 sm:h-7 md:h-8 xl:h-10 2xl:h-12"
       />
 
-      {/* Desktop Nav */}
+      {/* desktop nav */}
       <div className="hidden lg:flex lg:gap-5 xl:gap-8">
         {navlist.map((item) => {
           const isActive = item.title === "patients";
@@ -55,9 +54,9 @@ const Navbar = () => {
         })}
       </div>
 
-      {/* Right Section - Doctor Info + Menu Button */}
+      {/* right section */}
       <div className="flex items-center gap-2 md:gap-3">
-        {/* Doctor Info + Icons - Visible on md and above */}
+        {/* doctor info */}
         <div className="hidden md:flex items-center gap-2">
           <div className="flex items-center gap-1.5">
             <img
@@ -87,7 +86,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* mobile menu button */}
         <button
           className="flex items-center justify-center p-2 rounded-md lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -96,14 +95,14 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* mobile sidebar */}
       <div
         className={cn(
           "fixed top-0 left-0 h-full w-80 bg-white shadow-xl z-50 lg:hidden transform transition-transform duration-300 ease-in-out",
           menuOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        {/* Sidebar Header */}
+        {/* sidebar header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <img src={Logo} alt="logo" className="h-8" />
           <button
@@ -114,7 +113,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Navigation Items */}
+        {/* navigation items */}
         <div className="p-4 flex flex-col gap-2">
           {navlist.map((item, index) => {
             const isActive = item.title === "patients";
@@ -137,7 +136,7 @@ const Navbar = () => {
           })}
         </div>
 
-        {/* Mobile Doctor Info - Only shown on mobile (hidden on md and above) */}
+        {/* mobile doctor info  */}
         <div className="absolute bottom-6 left-2 right-2 flex items-center">
           <div className="flex items-center gap-3 py-4 px-1.5 bg-gray-50 rounded-2xl">
             <img
@@ -155,7 +154,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Settings Icons */}
+          {/* mobile setting */}
           <div className="flex items-center justify-center gap-6 mt-4">
             <img
               src={Setting}
@@ -171,7 +170,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Backdrop - Only show on mobile when sidebar is open */}
+      {/* backdrop for mobile sidebar */}
       {menuOpen && (
         <div
           className="fixed inset-0 bg-black/10 backdrop-blur-xs z-40 lg:hidden transition-opacity duration-300 animate-fadeIn"

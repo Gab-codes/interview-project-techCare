@@ -145,7 +145,7 @@ export default function BloodPressureChart({ data }: BloodPressureChartProps) {
 
   return (
     <div className="bg-[#F4F0FE] 2xl:w-[45.375rem] rounded-2xl p-1 grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
-      <div className="col-span-1 lg:col-span-2 p-2">
+      <div className="col-span-1 lg:col-span-2 lg:px-1 py-2 xl:p-2">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-lg font-semibold text-dark-sm">Blood Pressure</h3>
           <div className="body-regular-14 flex items-center gap-2">
@@ -159,6 +159,7 @@ export default function BloodPressureChart({ data }: BloodPressureChartProps) {
         </div>
       </div>
 
+      {/* right side  */}
       <div className="col-span-1 flex flex-col justify-start gap-4 p-2">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
@@ -168,7 +169,7 @@ export default function BloodPressureChart({ data }: BloodPressureChartProps) {
           <div className="text-[1.375rem] font-bold text-dark-sm">
             {latestSystolic}
           </div>
-          <div className="body-regular-14 flex items-center gap-2">
+          <div className="lg:text-xs xl:body-regular-14 flex items-center gap-2">
             <img src={ArrowUp} alt="arrow up" />
             <span>Higher than Average</span>
           </div>

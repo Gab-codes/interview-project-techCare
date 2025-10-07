@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
-import { fetchPatientData } from "@/lib/api";
+import { fetchPatientData, fetchAllPatientData } from "@/lib/api";
 import type { Patient } from "@/types";
 
-export function usePatient() {
+export function usePatient(name?: string) {
   const [patient, setPatient] = useState<Patient | null>(null);
+  const [patients, setPatients] = useState<Patient[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function getData() {
       try {
-        const data = await fetchPatientData();
-        setPatient(data);
+        setLoading(true);
+        if (name) {
+          const data = await fetchPatientData(name);
+          setPatient(data);
+        } else {
+          const data = await fetchAllPatientData();
+          setPatients(data);
+        }
       } catch (err) {
         setError((err as Error).message);
       } finally {
@@ -20,7 +27,7 @@ export function usePatient() {
     }
 
     getData();
-  }, []);
+  }, [name]);
 
-  return { patient, loading, error };
+  return { patient, patients, loading, error };
 }

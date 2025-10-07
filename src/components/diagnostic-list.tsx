@@ -6,7 +6,7 @@ const DiagnosticList = ({
   diagnosticDataList: DiagnosticItem[];
 }) => {
   return (
-    <div className="bg-white flex flex-col gap-4 rounded-2xl p-4">
+    <div className="bg-white flex flex-col gap-4 rounded-2xl p-4 h-full">
       <h2 className="card-title-24pt mb-3 2xl:mb-4">Diagnostic List</h2>
 
       <div className="overflow-hidden">
