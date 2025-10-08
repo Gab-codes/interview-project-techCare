@@ -13,7 +13,7 @@ interface PatientCardProps {
 
 const PatientCard: React.FC<PatientCardProps> = ({ name, avatar, info }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-xs lg:p-3 xl:p-5 flex flex-col items-center w-full">
+    <div className="bg-white rounded-2xl shadow-xs max-lg:pt-6 p-4 md:px-10 lg:p-3 xl:p-5 flex flex-col items-center w-full">
       <img
         src={avatar}
         alt={name}
