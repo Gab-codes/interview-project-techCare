@@ -190,7 +190,7 @@ export default function Patients() {
         <DrawerContent aria-describedby={undefined}>
           <DrawerHeader>
             <DrawerTitle>
-              <div className="flex justify-between items-center">
+              <div className="flex px-4 justify-between items-center">
                 <div className="text-xl font-bold">Patients</div>
                 <img src={Search} alt="search" />
               </div>
