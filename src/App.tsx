@@ -56,23 +56,27 @@ function App() {
   ];
 
   return (
-    <div className="flex w-full flex-col gap-3 px-4.5 xl:px-6 2xl:px-9 py-2 bg-background">
+    <div className="flex w-full flex-col gap-3 px-3 sm:px-4.5 xl:px-6 2xl:px-9 pt-2 pb-5 bg-background [--patient-width:13rem] lg:[--patient-width:13.75rem] xl:[--patient-width:18.75rem] 2xl:[--patient-width:22.9375rem]">
       <Navbar />
-      <div className="flex flex-1 size-full gap-4 2xl:mt-2">
+      <div className="flex flex-1 max-lg:flex-col size-full gap-4 2xl:mt-2">
         <div className="flex">
           <Patients />
         </div>
-        <div className="flex gap-4 flex-col">
-          <DiagnoseHistory patient={patient} />
-          <DiagnosticList diagnosticDataList={patient?.diagnostic_list ?? []} />
-        </div>
-        <div className="flex flex-col flex-1 gap-4">
-          <PatientCard
-            name={patient?.name ?? "Jessica Taylor"}
-            avatar={patient?.profile_picture ?? JessicaTaylor}
-            info={patientInfo}
-          />
-          <LabResult labResultData={patient.lab_results} />
+        <div className="flex gap-4 flex-1 max-lg:flex-col ">
+          <div className="flex gap-4 flex-col">
+            <DiagnoseHistory patient={patient} />
+            <DiagnosticList
+              diagnosticDataList={patient?.diagnostic_list ?? []}
+            />
+          </div>
+          <div className="flex flex-col flex-1 gap-4">
+            <PatientCard
+              name={patient?.name ?? "Jessica Taylor"}
+              avatar={patient?.profile_picture ?? JessicaTaylor}
+              info={patientInfo}
+            />
+            <LabResult labResultData={patient.lab_results} />
+          </div>
         </div>
       </div>
     </div>

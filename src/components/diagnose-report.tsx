@@ -33,7 +33,7 @@ const DiagnoseReport = ({ data }: { data: DiagnoseHistoryItem }) => {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid md:grid-cols-3 gap-4">
       {diagnoseReports.map((item) => (
         <div
           key={item.title}
