@@ -1,3 +1,4 @@
+import { Loader } from "lucide-react";
 import "./App.css";
 import {
   BirthIcon,
@@ -17,7 +18,12 @@ import { usePatient } from "./hook/usePatient";
 function App() {
   const { patient, loading, error } = usePatient("Jessica Taylor");
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="flex items-center h-screen justify-center">
+        <Loader className="animate-spin size-8 text-active-1" />
+      </div>
+    );
   if (error) return <div>{error}</div>;
   if (!patient) return <div>No patient found</div>;
 

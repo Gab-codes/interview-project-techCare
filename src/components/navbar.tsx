@@ -29,14 +29,12 @@ const Navbar = () => {
       className="flex justify-between items-center bg-white px-4 py-3.5 2xl:py-4.5 mt-1 lg:px-4 xl:px-6 rounded-full relative"
       aria-label="Main navigation"
     >
-      {/* Logo */}
       <img
         src={Logo}
         alt="Company logo"
         className="h-6 sm:h-7 md:h-8 xl:h-10 2xl:h-12"
       />
 
-      {/* ===== Desktop Nav ===== */}
       <div className="hidden lg:flex lg:gap-5 xl:gap-8" role="menubar">
         {navlist.map((item) => {
           const isActive = item.title === "patients";
@@ -46,7 +44,7 @@ const Navbar = () => {
               type="button"
               role="menuitem"
               aria-current={isActive ? "page" : undefined}
-              tabIndex={0} // ensure tabbable
+              tabIndex={0}
               className={cn(
                 "flex items-center lg:gap-1.5 xl:gap-2 body-emphasized-14pt capitalize transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-active-1",
                 "rounded-[41px] py-2",
@@ -67,9 +65,7 @@ const Navbar = () => {
         })}
       </div>
 
-      {/* ===== Right Section ===== */}
       <div className="flex items-center gap-2 md:gap-3">
-        {/* Doctor Info */}
         <div className="hidden md:flex items-center gap-2">
           <div className="flex items-center gap-1.5">
             <img
@@ -105,7 +101,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* ===== Mobile Menu Button ===== */}
         <button
           className="flex items-center justify-center p-2 rounded-md lg:hidden focus-visible:ring-2 focus-visible:ring-active-1"
           aria-controls="mobile-menu"
@@ -121,7 +116,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* ===== Mobile Sidebar ===== */}
       <div
         id="mobile-menu"
         className={cn(
@@ -131,7 +125,6 @@ const Navbar = () => {
         role="dialog"
         aria-modal="true"
       >
-        {/* Sidebar Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <img src={Logo} alt="Company logo" className="h-8" />
           <button
@@ -143,7 +136,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Navigation Items */}
         <div className="p-4 flex flex-col gap-2">
           {navlist.map((item, index) => {
             const isActive = item.title === "patients";
@@ -172,8 +164,7 @@ const Navbar = () => {
           })}
         </div>
 
-        {/* Mobile Doctor Info */}
-        <div className="absolute bottom-6 left-2 right-2 flex items-center">
+        <div className="absolute bottom-6 left-2 right-2 flex max-sm:gap-3 items-center">
           <div className="flex items-center gap-3 py-4 px-1.5 bg-gray-50 rounded-2xl">
             <img
               src={DoctorAvatar}
@@ -207,7 +198,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Backdrop for Mobile Sidebar */}
       {menuOpen && (
         <div
           className="fixed inset-0 bg-black/10 backdrop-blur-xs z-40 lg:hidden transition-opacity duration-300 animate-fadeIn"

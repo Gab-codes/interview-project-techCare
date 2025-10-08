@@ -19,7 +19,7 @@ const PatientCard: React.FC<PatientCardProps> = ({ name, avatar, info }) => {
         alt={name}
         className="lg:size-25 xl:size-40 2xl:size-50 rounded-full object-cover  2xl:mt-2 mb-3 2xl:mb-5"
       />
-      <h2 className="lg:text-lg lg:tracking-tighter xl:tracking-normal text-dark-sm font-bold xl:card-title-24pt mb-6 2xl:mb-8">
+      <h2 className="text-xl lg:text-lg lg:tracking-tighter xl:tracking-normal text-dark-sm font-bold xl:card-title-24pt mb-6 2xl:mb-8">
         {name}
       </h2>
 
@@ -28,10 +28,10 @@ const PatientCard: React.FC<PatientCardProps> = ({ name, avatar, info }) => {
           <div key={index} className="flex items-center gap-3">
             <img src={item.icon} className="size-8 xl:size-10.5" alt="icon" />
             <div className="flex flex-col">
-              <span className="lg:text-xs xl:text-sm font-medium text-dark-sm">
+              <span className="text-sm lg:text-xs xl:text-sm font-medium text-dark-sm">
                 {item.title}
               </span>
-              <span className="capitalize lg:text-xs xl:text-sm font-bold">
+              <span className="capitalize text-sm lg:text-xs xl:text-sm font-bold">
                 {item.value}
               </span>
             </div>

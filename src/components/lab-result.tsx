@@ -13,7 +13,7 @@ const LabResult = ({ labResultData }: { labResultData: string[] }) => {
             key={data}
             className="flex items-center hover:bg-background py-3 px-3 justify-between"
           >
-            <span className="text-xs 2xl:text-[13px]"> {data}</span>
+            <span className="text-sm lg:text-xs 2xl:text-[13px]"> {data}</span>
             <img src={Download} alt="download icon" className="size-4" />
           </div>
         ))}
